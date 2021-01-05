@@ -1,0 +1,38 @@
+
+
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Paypig name tax</h2>
+
+<input id="my-text-box"></input>
+
+<div id="messages" style="white-space:pre;"></div>
+<div> you owe $ <span id="total" ></span>  piggie </div>
+<script>
+
+
+var input = document.querySelector('#my-text-box');
+
+var alphabet = "abcdefghijklmnopqrstuvwxyz".split('').reverse();
+
+var messages = document.querySelector('#messages');
+var totalspan = document.querySelector('#total');
+input.addEventListener('input', function() {
+  var i;
+      var total=0;
+            messages.textContent = '';
+                    var val = input.value.toLowerCase();
+                              for (i = 0; i < val.length; i++) {
+                                        total += alphabet.indexOf(val[i]) +1;
+                                                      messages.textContent += input.value[i] + '=' + (alphabet.indexOf(val[i]) + 1 )+ '\n';
+                                                                      }
+                                                                                      totalspan.textContent = total;
+                                                                                                      });
+</script>
+
+</body>
+</html>
